@@ -13,8 +13,6 @@ package org.robotlegs.examples.addressbook.controller.setup
             mediatorMap.mapView(ContactsToolbarView, ContactsToolbarViewMediator);
             mediatorMap.mapView(ContactsTabNavigator, ContactsTabNavigatorMediator);
             mediatorMap.mapView(ContactForm, ContactFormMediator); 
-            
-            //dispatch(new ContactServiceEvent(ContactServiceEvent.LOAD));
         }
     }
 }

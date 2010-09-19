@@ -27,7 +27,7 @@ package org.robotlegs.examples.addressbook.service.helpers
         
         private function executeBatch_complete(results:Vector.<SQLResult>):void
         {
-            dispatch(new ApplicationConfigurationEvent(ApplicationConfigurationEvent.CONFIGURE_MODEL));
+//            dispatch(new ApplicationConfigurationEvent(ApplicationConfigurationEvent.CONFIGURE_MODEL));
         }
         
         

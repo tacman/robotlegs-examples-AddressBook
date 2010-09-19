@@ -29,8 +29,6 @@ package org.robotlegs.examples.addressbook.view
 			
 			eventMap.mapListener( view, ContactEvent.SELECT, dispatch );
 			eventMap.mapListener( view, ContactEvent.EDIT, dispatch );
-			
-			dispatch(new ContactServiceEvent(ContactServiceEvent.LOAD));
         }
         
         protected function handleContactSelected(event:Event):void

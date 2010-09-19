@@ -6,7 +6,6 @@ package org.robotlegs.examples.addressbook.service.events
 	
 	public class ContactServiceEvent extends Event
 	{
-		public static const LOAD:String = "contactService_load";
 		public static const LOADED:String = "contactSerivce_loaded";
 		public static const SAVED:String = "contactService_saved";
 		public static const REMOVED:String = "contactService_removed";
