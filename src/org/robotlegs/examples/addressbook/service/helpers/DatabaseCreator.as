@@ -5,10 +5,8 @@ package org.robotlegs.examples.addressbook.service.helpers
     
     import flash.data.SQLResult;
     import flash.errors.SQLError;
-    import flash.events.IEventDispatcher;
     import flash.events.SQLErrorEvent;
     
-    import org.robotlegs.examples.addressbook.events.ApplicationConfigurationEvent;
     import org.robotlegs.mvcs.Actor;
 
     public class DatabaseCreator extends Actor
@@ -19,15 +17,14 @@ package org.robotlegs.examples.addressbook.service.helpers
         public function createDatabaseStructure():void
         {
             var stmts:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
-            stmts[stmts.length] = new QueuedStatement(CREATE_CONTACTS_SQL);
-            stmts[stmts.length] = new QueuedStatement(POPULATE_CONTACTS_SQL);
+			stmts[stmts.length] = new QueuedStatement(CREATE_CONTACTS_SQL);
+			stmts[stmts.length] = new QueuedStatement(POPULATE_CONTACTS_SQL);
             
             sqlRunner.executeModify(stmts, executeBatch_complete, executeBatch_error, null);
         }
         
         private function executeBatch_complete(results:Vector.<SQLResult>):void
         {
-//            dispatch(new ApplicationConfigurationEvent(ApplicationConfigurationEvent.CONFIGURE_MODEL));
         }
         
         
