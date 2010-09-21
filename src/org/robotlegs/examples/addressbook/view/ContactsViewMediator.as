@@ -6,7 +6,6 @@ package org.robotlegs.examples.addressbook.view
 	import org.robotlegs.examples.addressbook.model.ContactsModel;
 	import org.robotlegs.examples.addressbook.model.events.ContactsModelEvent;
 	import org.robotlegs.examples.addressbook.service.events.ContactServiceEvent;
-	import org.robotlegs.examples.addressbook.view.events.ContactTabNavigatorEvent;
 	import org.robotlegs.mvcs.Mediator;
 	
 	public class ContactsViewMediator extends Mediator
@@ -19,7 +18,7 @@ package org.robotlegs.examples.addressbook.view
 		
 		override public function onRegister():void
 		{
-			eventMap.mapListener( eventDispatcher, ContactServiceEvent.LOADED, handleContactsLoaded );
+			eventMap.mapListener( eventDispatcher, ContactsModelEvent.LIST_LOADED, handleContactsLoaded );
 			eventMap.mapListener( eventDispatcher, ContactServiceEvent.SAVED, handleContactSaved);
 			
 			eventMap.mapListener( eventDispatcher, ContactEvent.CREATE, disableViewOnEvent);
@@ -36,7 +35,7 @@ package org.robotlegs.examples.addressbook.view
 	        view.selectContact(model.selected);
         }
 		
-		protected function handleContactsLoaded(event:ContactServiceEvent):void
+		protected function handleContactsLoaded(event:ContactsModelEvent):void
 		{
 			view.dataProvider = model.list;
 		}

@@ -10,13 +10,10 @@
 			import org.robotlegs.examples.addressbook.events.ContactEvent;
 			import org.robotlegs.examples.addressbook.model.vo.Contact;
 			
-			[Bindable]
-			public var selected:Contact;
-			
 
 			protected function createContact_clickHandler(event:MouseEvent):void
 			{
-				dispatchEvent(new ContactEvent(ContactEvent.CREATE, selected));
+				dispatchEvent(new ContactEvent(ContactEvent.CREATE, null));
 			}
 
 		]]>

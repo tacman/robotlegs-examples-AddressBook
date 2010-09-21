@@ -26,19 +26,23 @@ package org.robotlegs.examples.addressbook.service
 		
 		public function load():void
 		{
-			sqlRunner.execute(LOAD_CONTACTS_SQL, null, load_result, Contact);
+			sqlRunner.execute(LOAD_CONTACTS_SQL, null, load_result, Contact, load_error);
 		}
 		
 		private function load_result(result:SQLResult):void
 		{
 			model.list = new ArrayCollection(result.data);
-			dispatch(new ContactServiceEvent(ContactServiceEvent.LOADED));
+		}
+		
+		private function load_error(error:SQLError):void
+		{
+			trace(error);
 		}
 		
 		
 		public function save(contact:Contact):void
 		{
-			if(!model.list.contains(contact))
+			if (!model.list.contains(contact))
 			{
 				addNew(contact);
 			}

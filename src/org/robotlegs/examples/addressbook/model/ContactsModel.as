@@ -25,6 +25,7 @@ package org.robotlegs.examples.addressbook.model
 		public function set list(value:ArrayCollection):void
 		{
 			_list = value;
+			dispatch(new ContactsModelEvent(ContactsModelEvent.LIST_LOADED));
 		}
 		
 		private var _selected:Contact;
@@ -43,8 +44,8 @@ package org.robotlegs.examples.addressbook.model
 		public function create():Contact
 		{
 			var contact:Contact = new Contact();
-			selected = contact;
 			dispatch(new ContactsModelEvent(ContactsModelEvent.CREATED));
+			selected = contact;
 			return contact;
 		}
 		

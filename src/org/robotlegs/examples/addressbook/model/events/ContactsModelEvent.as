@@ -6,6 +6,7 @@ package org.robotlegs.examples.addressbook.model.events
 
 	public class ContactsModelEvent extends Event
 	{
+		public static const LIST_LOADED:String = "contactModel_listLoaded";
 		public static const SELECTED:String = "contactModel_contactSelected";
 		public static const EDITING:String = "contactModel_contactEditing";
 		public static const CREATED:String = "contactModel_contactCreated";

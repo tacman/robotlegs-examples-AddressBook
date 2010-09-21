@@ -21,7 +21,6 @@ package org.robotlegs.examples.addressbook.service
 		{
 			var xml:XML = XML( ContactsXML.data );
 			model.list = ContactXMLParser.getCollection(xml);
-			dispatch(new ContactServiceEvent(ContactServiceEvent.LOADED));
 		}
 		
 		public function save(contact:Contact):void
